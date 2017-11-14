@@ -20,10 +20,9 @@ public class ServiceClient {
 
             PrintWriter pw = new PrintWriter(outputStream);
 
-            Scanner scanner = new Scanner(System.in);
-            String line = scanner.nextLine();
 
-            pw.println(line);
+
+            pw.println("aaa");
             pw.flush();
 
 
