@@ -22,7 +22,7 @@ public class ServiceClient {
 
 
 
-            pw.println("aaa");
+            pw.println("ass");
             pw.flush();
 
 
