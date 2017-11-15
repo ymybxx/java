@@ -31,17 +31,18 @@ public class ServiceServerTask implements Runnable {
 //            }
 
             //获取参数
-            String param = bf.readLine();
+            String param;
+            while (!(param = bf.readLine()) .equals("exit") ) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(param == null) continue;
+                System.out.println(param);
 
-            //业务实现类型
-            GetDataServiceImpl gdl = new GetDataServiceImpl();
-            String result =  gdl.getData(param);
+            }
 
-
-            //将结果写到socket
-            PrintWriter printWriter = new PrintWriter(outputStream);
-            printWriter.println(result);
-            printWriter.flush();
 
 
         } catch (IOException e) {

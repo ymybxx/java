@@ -1,6 +1,7 @@
 package com.unique.socket;
 
 
+import java.awt.*;
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
@@ -20,11 +21,13 @@ public class ServiceClient {
 
             PrintWriter pw = new PrintWriter(outputStream);
 
+            Scanner scanner = new Scanner(System.in);
 
-
-            pw.println("ass");
-            pw.flush();
-
+            String line = "";
+            while(!(line = scanner.nextLine()) .equals("exit") ) {
+                    pw.println(line);
+                    pw.flush();
+            }
 
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             String result = br.readLine();
